@@ -6,6 +6,7 @@ import { ChevronDown, UserRound, Loader2, CheckCircle, XCircle } from "lucide-re
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { toast } from "sonner"; 
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 interface FormErrors {
   username?: string;
@@ -240,6 +241,7 @@ const RegisterForm = () => {
                 {isLoading ? 'Registering...' : 'Register'}
               </Button>
             </form>
+            <span className='mt-8'>Already Have an Account? <Link to='/login' className='text-blue-600'>Login</Link></span>
           </div>
         </div>
       </div>
