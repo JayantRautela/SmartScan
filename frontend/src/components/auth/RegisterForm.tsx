@@ -84,7 +84,7 @@ const RegisterForm = () => {
         formData.append('email', email);
         formData.append('password', password); 
         if (profilePicture) {
-          formData.append('profilePicture', profilePicture, profilePicture.name);
+          formData.append('file', profilePicture, profilePicture.name);
         }
 
         console.log("Form data to be sent:", { 
@@ -241,7 +241,7 @@ const RegisterForm = () => {
                 {isLoading ? 'Registering...' : 'Register'}
               </Button>
             </form>
-            <span className='mt-8'>Already Have an Account? <Link to='/login' className='text-blue-600'>Login</Link></span>
+            <span className='text-sm text-muted-foreground'>Already Have an Account? <Link to='/login' className='text-primary font-medium hover:underline'>Login</Link></span>
           </div>
         </div>
       </div>
