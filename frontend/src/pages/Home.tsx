@@ -1,4 +1,5 @@
 import Hero from "@/components/Hero"
+import Secondary from "@/components/Secondary"
 import Navbar from "@/components/shared/Navbar"
 
 
@@ -7,6 +8,7 @@ const Home = () => {
     <div>
       <Navbar />
       <Hero />
+      <Secondary />
     </div>
   )
 }
