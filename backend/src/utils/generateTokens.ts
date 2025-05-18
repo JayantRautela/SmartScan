@@ -10,7 +10,7 @@ interface Data {
 const ACCESS_TOKEN_SECRET = process.env.ACCESS_TOKEN_SECRET!;
 const REFRESH_TOKEN_SECRET = process.env.REFRESH_TOKEN_SECRET!;
 
-export const genertaeTokens = (data: Data) => {
+export const generateTokens = (data: Data) => {
     const accessToken = jwt.sign(data, ACCESS_TOKEN_SECRET, {
         expiresIn: '15m'
     });
