@@ -2,9 +2,13 @@ import { Link, useNavigate } from "react-router-dom";
 import { Button } from "../ui/button";
 import { useState } from "react";
 import { CheckCircle, Menu, X, XCircle, User } from "lucide-react";
+import { useSelector } from "react-redux";
 import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
+import { useDispatch } from "react-redux";
+import { setUser } from "@/redux/authSlice";
 import { toast } from "sonner";
+import type { AppDispatch } from "@/redux/store";
 import axios from "axios";
 
 interface ServerResponse {
@@ -12,14 +16,10 @@ interface ServerResponse {
   message: string;
 }
 
-interface User {
-    username: string
-    profilePicture?: string
-}
-
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const user: User = {username: 'jay'}
+  const { user } = useSelector((store: any) => store.auth);
+  const dispatch = useDispatch<AppDispatch>();
 
   const navigate = useNavigate();
 
@@ -34,12 +34,13 @@ const Navbar = () => {
   const logoutHandler = async () => {
     try {
       const res = await axios.get<ServerResponse>(
-        ``,
+        `https://skillscan-backend-production.up.railway.app/api/v1/users/logout`,
         {
           withCredentials: true,
         }
       );
       if (res.status === 200) {
+        dispatch(setUser(null));
         navigate("/");
         toast.success(res.data.message, {
           icon: <CheckCircle className="text-green-600 w-5 h-5" />,
@@ -68,7 +69,7 @@ const Navbar = () => {
       <div className="hidden md:flex gap-10">
         <Link to='/calculate-ats'>Calculate ATS</Link>
         <Link to="/resume-analysis">Resume Analysis</Link>
-        <Link to="/success-stories">Success Stories</Link>
+        <Link to="/about-us">About Us</Link>
       </div>
 
       <div className="md:hidden">
