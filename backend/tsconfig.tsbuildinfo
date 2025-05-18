@@ -1,0 +1,1 @@
+{"root":["./src/server.ts","./src/config/cloudinary.config.ts","./src/controllers/user.controller.ts","./src/middlewares/multer.middleware.ts","./src/routes/user.route.ts","./src/utils/generateotp.ts","./src/utils/generatetokens.ts","./src/utils/getdatauri.ts","./src/utils/password.ts"],"version":"5.8.3"}

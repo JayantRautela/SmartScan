@@ -3,6 +3,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import cookieParser from 'cookie-parser';
 dotenv.config({});
+import UserRouter from './routes/user.route';
 
 const app: Express = express();
 
@@ -14,6 +15,8 @@ app.use(cors({
 app.use(cookieParser());
 
 const PORT = process.env.PORT || 5000;
+
+app.use('/api/v1/users', UserRouter);
 
 app.listen(PORT, () => {
     console.log(`Server Started at PORT ${PORT}`);
