@@ -17,4 +17,15 @@ model User {
   createdAt      DateTime @default(now())
   updatedAt      DateTime @updatedAt
   refreshToken   String?
+  loginOtp       OTP[]
+  resetPasswordToken String?
+  resetTokenExpiry DateTime?
+}
+
+model OTP {
+  id        String   @id @default(cuid())
+  code      Int
+  expiresAt DateTime
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
 }
