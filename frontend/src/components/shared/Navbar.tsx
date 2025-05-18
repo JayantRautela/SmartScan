@@ -24,7 +24,7 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   const clickHandler = () => {
-    navigate("/signup");
+    navigate("/register");
   };
 
   const redirectToLogin = () => {
