@@ -160,6 +160,8 @@ const LoginForm = () => {
           >
             {isLoading ? "Logging in..." : "Login"}
           </Button>
+
+          <Button className="w-full h-12 text-base font-medium cursor-pointer bg-white text-black border hover:bg-gray-300" onClick={() => navigate('/login-otp')}>Login With OTP</Button>
         </form>
       </CardContent>
       <CardFooter className="flex justify-center border-t pt-6">

@@ -17,6 +17,7 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import SkillAnalysis from "./pages/SkillAnalysis";
 import AnalyseResume from "./pages/AnalyseResume";
 import ResumeDetails from "./pages/ResumeAnalysis";
+import OtpLoginForm from "./components/auth/LoginOtp";
 
 interface ServerResponse {
   message: string;
@@ -49,6 +50,10 @@ const router = createBrowserRouter([
   {
     path: '/forgot-password',
     element: <ForgotPassword />
+  },
+  {
+    path: '/login-otp',
+    element: <OtpLoginForm />
   },
   {
     path: '/reset-password',
