@@ -1,7 +1,7 @@
 import Navbar from "@/components/shared/Navbar";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import UploadResume from "@/components/UploadResume";
+import UploadResumeAnalysis from "@/components/UploadResumeAnalysis";
 
 const AnalyseResume = () => {
   const [open, setOpen] = useState<boolean>(false);
@@ -26,7 +26,7 @@ const AnalyseResume = () => {
           >
             Upload Resume
           </Button>
-          <UploadResume open={open} onOpenChange={setOpen} />
+          <UploadResumeAnalysis open={open} onOpenChange={setOpen} />
           <p className="mt-6 text-sm text-center">
             or drop a PDF,
             <br />

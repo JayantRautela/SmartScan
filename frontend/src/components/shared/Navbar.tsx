@@ -68,7 +68,7 @@ const Navbar = () => {
 
       <div className="hidden md:flex gap-10">
         <Link to='/calculate-ats'>Calculate ATS</Link>
-        <Link to="/resume-analysis">Resume Analysis</Link>
+        <Link to="/analyse-resume">Resume Analysis</Link>
         <Link to="/about-us">About Us</Link>
       </div>
 
