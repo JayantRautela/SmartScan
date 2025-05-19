@@ -114,10 +114,16 @@ const UploadResume = ({ open, onOpenChange }: PdfUploadDialogProps) => {
       clearInterval(progressInterval);
       setUploadProgress(100);
 
-      const skills = response.data.extracted; 
-      const feedback = response.data.feedback
-      localStorage.setItem("skills", JSON.stringify(skills));
-      localStorage.setItem("feedback", JSON.stringify(feedback))
+      const skills = response.data.extracted;
+      const feedback = response.data.feedback;
+
+      if (response.data.extracted !== undefined) {
+        localStorage.setItem("skills", JSON.stringify(response.data.extracted));
+      }
+
+      if (response.data.feedback !== undefined) {
+        localStorage.setItem("feedback", JSON.stringify(response.data.feedback));
+      }
 
       setTimeout(() => {
         setSelectedFile(null);
