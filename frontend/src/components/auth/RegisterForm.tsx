@@ -8,6 +8,7 @@ import { toast } from "sonner";
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import logo from "../../assets/logo.png";
+import axios from "axios";
 
 interface FormErrors {
   username?: string;
@@ -97,7 +98,7 @@ const RegisterForm = () => {
 
 
         const response = await axios.post(
-        "",
+        "https://smartscan-production.up.railway.app/api/v1/users/register",
         formData,
         {
           headers: {

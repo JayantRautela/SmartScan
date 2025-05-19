@@ -34,7 +34,7 @@ const Navbar = () => {
   const logoutHandler = async () => {
     try {
       const res = await axios.get<ServerResponse>(
-        `https://skillscan-backend-production.up.railway.app/api/v1/users/logout`,
+        `https://smartscan-production.up.railway.app/api/v1/users/logout`,
         {
           withCredentials: true,
         }

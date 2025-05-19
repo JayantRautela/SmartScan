@@ -6,6 +6,9 @@ import { toast } from "sonner";
 import { CheckCircle, Eye, EyeOff, XCircle } from "lucide-react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import type { AppDispatch} from "@/redux/store";
+import { setUser } from "@/redux/authSlice";
 
 interface ServerResponse {
   message: string;
@@ -23,7 +26,18 @@ const LoginForm = () => {
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const dispatch = useDispatch<AppDispatch>();
+  const { user } = useSelector((store: any) => store.auth);
   const navigate = useNavigate();
+
+  if (user) {
+    return (
+      <div className="w-full h-screen flex items-center justify-center flex-col gap-5">
+        <p className="text-4xl text-gray-800">User is already Logged In</p>
+        <Button className="px-6 py-3 bg-blue-600 cursor-pointer text-white rounded-xl hover:bg-blue-700 transition" onClick={() => navigate('/')}>Back To Home</Button>
+      </div>
+    )
+  }
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -36,7 +50,7 @@ const LoginForm = () => {
     setIsLoading(true);
     
     try {
-      const response = await axios.post<ServerResponse>('https://skillscan-backend-production.up.railway.app/api/v1/users/login',
+      const response = await axios.post<ServerResponse>('https://smartscan-production.up.railway.app/api/v1/users/login',
         {
           username: username,
           password: password,
@@ -52,6 +66,7 @@ const LoginForm = () => {
 
       console.log(`Upload Success: ${response}`);
       if (response.status === 200) {
+        dispatch(setUser(response.data.user));
         toast.success("User Logged In",{
           icon: <CheckCircle className="text-green-600 w-5 h-5" />
         });

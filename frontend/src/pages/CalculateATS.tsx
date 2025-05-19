@@ -43,7 +43,7 @@ const CalculateATS = () => {
     setLoading(true);
 
     try {
-      const response = await axios.post<ServerResponse>('https://skillscan-backend-production.up.railway.app/api/v1/resume/calculate-ats', formData, {
+      const response = await axios.post<ServerResponse>('https://smartscan-production.up.railway.app/api/v1/resume/calculate-ats', formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         }, 
