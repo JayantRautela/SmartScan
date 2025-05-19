@@ -33,3 +33,5 @@ const generateFeedback = (
 
         return feedback;
 };
+
+export default generateFeedback;

@@ -6,6 +6,7 @@ import natural from "natural";
 import { removeStopwords } from "stopword";
 import { PrismaClient } from '@prisma/client';
 import { extractSkills } from '../utils/extractSkills';
+import generateFeedback from '../utils/generateFeedback';
 
 const SKILLS = {
     languages: ['JavaScript', 'TypeScript', 'Python', 'Java', 'C++', 'C#', 'Go', 'Ruby'],
