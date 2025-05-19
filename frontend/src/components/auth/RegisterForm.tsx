@@ -7,6 +7,7 @@ import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { toast } from "sonner"; 
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import logo from "../../assets/logo.png";
 
 interface FormErrors {
   username?: string;
@@ -138,7 +139,7 @@ const RegisterForm = () => {
           <div className="w-full md:w-2/5 bg-gradient-to-br from-indigo-600 to-cyan-400 text-white p-8 sm:p-12 flex flex-col items-center justify-center text-center rounded-t-xl md:rounded-tr-none md:rounded-l-xl">
 
             <img 
-              src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80" 
+              src={logo}
               alt="Company Logo" 
               className="w-24 h-24 mb-6 rounded-full object-cover" 
             />

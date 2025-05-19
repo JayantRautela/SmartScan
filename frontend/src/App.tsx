@@ -10,6 +10,9 @@ import { logout, setUser } from './redux/authSlice';
 import axios from 'axios';
 import type { AppDispatch } from "./redux/store";
 import { useEffect } from "react";
+import ForgotPassword from "./pages/ForgotPassword";
+import ResetPassword from "./pages/ResetPassword";
+import Redirect from "./pages/Redirect";
 
 interface ServerResponse {
   message: string;
@@ -38,6 +41,18 @@ const router = createBrowserRouter([
   {
     path: '/resume-analysis',
     element: <AnalyseResume />
+  },
+  {
+    path: '/forgot-password',
+    element: <ForgotPassword />
+  },
+  {
+    path: '/reset-password',
+    element: <ResetPassword />
+  },
+  {
+    path: '/redirect',
+    element: <Redirect />
   },
   { 
     path: "*", 

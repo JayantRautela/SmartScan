@@ -1,14 +1,15 @@
 import LoginForm from "@/components/auth/LoginForm";
+import logo from "../assets/logo.png";
 
 const Login = () => {
   return (
     <div className="min-h-screen flex flex-col lg:flex-row">
       <div className="lg:w-1/2 relative bg-gradient-to-b from-blue-600 to-blue-400 p-8 text-white flex flex-col items-center justify-center">
-        <div className="w-24 h-24 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center mb-8">
+        <div className="w-32 h-32 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center mb-8">
           <img 
-            src="/placeholder.svg" 
+            src={logo} 
             alt="Login" 
-            className="w-16 h-16 rounded-full object-cover"
+            className="w-20 h-20 rounded-full object-cover"
           />
         </div>
         <h2 className="text-3xl font-bold mb-2 text-center">Welcome Back</h2>
