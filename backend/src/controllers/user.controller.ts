@@ -6,6 +6,7 @@ import { hashPassword, verifyPassword } from "../utils/password";
 import { generateTokens } from "../utils/generateTokens";
 import generateOtp from "../utils/generateOtp";
 import crypto from 'crypto';
+import { sendForgotPasswordEmail, sendOtpEmail, sendRegistrationEmail } from "../utils/sendMail";
 
 const client = new PrismaClient();
 
@@ -79,6 +80,12 @@ export const register:RequestHandler = async (req: Request, res: Response) => {
                 fullName: fullName,
                 profilePicture: profilePicture
             }
+        });
+
+        sendRegistrationEmail({
+            to: email,
+            subject: "Welcome to SmartScan – Let’s Optimize Your Resume!",
+            username: username
         });
 
         res.status(201).json({
@@ -256,6 +263,11 @@ export const sendOtp: RequestHandler = async (req: Request, res: Response) => {
         });
 
         //TODO: send OTP to mail
+        sendOtpEmail({
+            to: user.email,
+            subject: "Otp for Login",
+            otp: otp
+        });
 
         res.status(200).json({
             message: "OTP sent",
@@ -404,6 +416,13 @@ export const forgotPassword: RequestHandler = async (req: Request, res: Response
         const resetLink = `${process.env.RESET_PASSWORD_LINK}?token=${token}`;
 
         //send forgotpasswords enail
+        sendForgotPasswordEmail({
+            to: user.email,
+            username: user.username,
+            resetPasswordLink: resetLink,
+            subject: "Reset Password Link"
+        });
+
 
         res.status(200).json({ 
             message: "Password reset link sent to your email",
