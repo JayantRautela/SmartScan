@@ -114,14 +114,16 @@ const UploadResume = ({ open, onOpenChange }: PdfUploadDialogProps) => {
       clearInterval(progressInterval);
       setUploadProgress(100);
 
-      const analysis = response.data.analysis;
-      localStorage.setItem("resumeAnalysis", JSON.stringify(analysis));
+      const skills = response.data.extracted; 
+      const feedback = response.data.feedback
+      localStorage.setItem("skills", JSON.stringify(skills));
+      localStorage.setItem("feedback", JSON.stringify(feedback))
 
       setTimeout(() => {
         setSelectedFile(null);
         setIsUploading(false);
         onOpenChange(false);
-        navigate("/resume-analysis", { state: { analysis } });
+        navigate("/resume-analysis", { state: { skills, feedback } });
       }, 500);
     } catch (error: any) {
       clearInterval(progressInterval);
