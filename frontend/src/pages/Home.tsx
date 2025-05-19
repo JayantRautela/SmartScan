@@ -1,5 +1,6 @@
 import Hero from "@/components/Hero"
 import Secondary from "@/components/Secondary"
+import Footer from "@/components/shared/Footer"
 import Navbar from "@/components/shared/Navbar"
 
 
@@ -9,6 +10,7 @@ const Home = () => {
       <Navbar />
       <Hero />
       <Secondary />
+      <Footer />
     </div>
   )
 }
