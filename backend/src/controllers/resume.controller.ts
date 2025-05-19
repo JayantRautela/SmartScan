@@ -5,6 +5,7 @@ import getDataUri from '../utils/getDataUri';
 import natural from "natural";
 import { removeStopwords } from "stopword";
 import { PrismaClient } from '@prisma/client';
+import { extractSkills } from '../utils/extractSkills';
 
 const client = new PrismaClient();
 
@@ -69,6 +70,60 @@ export const calculateATSScore: RequestHandler = async (req: Request, res: Respo
             score: score,
             matchedKeywords: matchedKeywords,
             missingKeywords: missingKeywords
+        });
+        return;
+    } catch (error: any) {
+        console.log(`Error: ${error}`);
+        res.status(500).json({
+            message: "Some Error Occured",
+            error: error.message,
+            success: false
+        });
+        return;
+    }
+}
+
+export const fetchSKills: RequestHandler = async (req: Request, res: Response) => {
+    try {
+        const file = req.file;
+        const userId = req.user?.id!;
+
+        if (!file) {
+            res.status(400).json({
+                message: "Resume is required",
+                success: false
+            });
+            return;
+        }
+
+        const dataUri = getDataUri(file);
+
+        const cloudinaryResult = await cloudinary.uploader.upload(dataUri.content!, {
+        resource_type: 'raw',
+        folder: 'resumes',
+        });
+
+        console.log('File Uploaded to Cloudinary:', cloudinaryResult.secure_url);
+
+        const pdfData = await pdfParse(file.buffer);
+        console.log(pdfData);
+        const resumeText = pdfData.text;
+        console.log(resumeText);
+
+        await client.resume.create({
+            data: {
+                userId: userId,
+                resumeText: resumeText,
+                resumeUrl: cloudinaryResult.secure_url
+            }
+        });
+
+        const extracted = extractSkills(resumeText);
+
+        res.status(200).json({
+            message: "Skills fetched successfully",
+            success: true,
+            skills: extracted
         });
         return;
     } catch (error: any) {
