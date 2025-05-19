@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <div className="w-full bg-white px-4 py-10">
       <section className="text-center">
-        <h1 className="tracking-tighter text-lg font-semibold">SkillScan</h1>
+        <h1 className="tracking-tighter text-lg font-semibold">SmartScan</h1>
         <div className="flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-10 items-center justify-center mt-6 text-gray-700">
           <Link to="/" className="hover:underline transition delay-150 duration-300 ease-in-out">Home</Link>
           <Link to="/resume-analysis" className="hover:underline transition delay-150 duration-300 ease-in-out">Resume Analysis</Link>
@@ -24,7 +24,7 @@ const Footer = () => {
           <Link to="/cookie-settings">Cookie Settings</Link>
         </div>
         <div className="text-center sm:text-right">
-          <p>&copy; {year} SkillScan. All rights reserved.</p>
+          <p>&copy; {year} SmartScan. All rights reserved.</p>
         </div>
       </section>
     </div>
