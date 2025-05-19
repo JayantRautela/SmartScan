@@ -13,6 +13,8 @@ import { useEffect } from "react";
 import ForgotPassword from "./pages/ForgotPassword";
 import ResetPassword from "./pages/ResetPassword";
 import Redirect from "./pages/Redirect";
+import CalculateATS from "./pages/CalculateATS";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 interface ServerResponse {
   message: string;
@@ -53,6 +55,14 @@ const router = createBrowserRouter([
   {
     path: '/redirect',
     element: <Redirect />
+  },
+  {
+    path: '/calculate-ats',
+    element: (
+      <ProtectedRoute>
+        <CalculateATS />
+      </ProtectedRoute>
+    )
   },
   { 
     path: "*", 
