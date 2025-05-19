@@ -118,7 +118,7 @@ const ResumeDetails = () => {
           <div className="mt-10 text-center">
             <Button
               onClick={() => navigate("/")}
-              className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg"
+              className="bg-blue-600 hover:bg-blue-700 cursor-pointer text-white px-6 py-2 rounded-lg"
             >
               Back To HOME
             </Button>

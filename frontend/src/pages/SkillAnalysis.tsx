@@ -1,7 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
 import logo from "../assets/logo.png";
+import { Button } from "@/components/ui/button";
 
 type SkillCategory = "languages" | "software" | "communication" | "backend" | "frontend";
 
@@ -26,6 +27,7 @@ const categoryLabels: Record<SkillCategory, string> = {
 };
 
 const ResumeAnalysisPage: React.FC = () => {
+  const navigate = useNavigate();
   const location = useLocation();
   const [data, setData] = useState<ResumeResponse | null>(null);
   const pdfRef = useRef<HTMLDivElement>(null);
@@ -141,6 +143,14 @@ const ResumeAnalysisPage: React.FC = () => {
           })}
         </div>
       </div>
+      <div className="mt-10 text-center">
+            <Button
+              onClick={() => navigate("/")}
+              className="bg-blue-600 hover:bg-blue-700 cursor-pointer text-white px-6 py-2 rounded-lg"
+            >
+              Back To HOME
+            </Button>
+          </div>
     </div>
   );
 };
