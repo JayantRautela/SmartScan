@@ -7,6 +7,14 @@ import { removeStopwords } from "stopword";
 import { PrismaClient } from '@prisma/client';
 import { extractSkills } from '../utils/extractSkills';
 
+const SKILLS = {
+    languages: ['JavaScript', 'TypeScript', 'Python', 'Java', 'C++', 'C#', 'Go', 'Ruby'],
+    software: ['Git', 'Docker', 'Jira', 'Figma', 'Photoshop', 'VSCode', 'Postman', 'Excel'],
+    communication: ['communication', 'leadership', 'teamwork', 'public speaking', 'collaboration', 'adaptability', 'problem solving'],
+    backend: ['Node.js', 'Express', 'Django', 'Flask', 'PostgreSQL', 'MongoDB', 'REST API', 'GraphQL', 'SQL'],
+    frontend: ['React', 'Redux', 'HTML', 'CSS', 'Vue.js', 'Angular', 'Next.js', 'Tailwind', 'Bootstrap']
+};
+
 const client = new PrismaClient();
 
 export const calculateATSScore: RequestHandler = async (req: Request, res: Response) => {
@@ -119,11 +127,13 @@ export const fetchSKills: RequestHandler = async (req: Request, res: Response) =
         });
 
         const extracted = extractSkills(resumeText);
+        const feedback = generateFeedback(extracted, SKILLS)
 
         res.status(200).json({
             message: "Skills fetched successfully",
             success: true,
-            skills: extracted
+            skills: extracted,
+            feedback: feedback
         });
         return;
     } catch (error: any) {
