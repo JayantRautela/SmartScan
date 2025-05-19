@@ -3,7 +3,6 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import Home from "./pages/Home"
 import Register from "./pages/Register"
 import Login from "./pages/Login";
-import AnalyseResume from "./pages/AnalyseResume";
 import NotFound from "./pages/NotFound";
 import { useDispatch } from 'react-redux';
 import { logout, setUser } from './redux/authSlice';
@@ -15,6 +14,7 @@ import ResetPassword from "./pages/ResetPassword";
 import Redirect from "./pages/Redirect";
 import CalculateATS from "./pages/CalculateATS";
 import ProtectedRoute from "./components/ProtectedRoute";
+import SkillAnalysis from "./pages/SkillAnalysis";
 
 interface ServerResponse {
   message: string;
@@ -42,7 +42,7 @@ const router = createBrowserRouter([
   },
   {
     path: '/resume-analysis',
-    element: <AnalyseResume />
+    element: <SkillAnalysis />
   },
   {
     path: '/forgot-password',
