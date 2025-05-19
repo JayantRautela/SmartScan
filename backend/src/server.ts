@@ -10,7 +10,6 @@ const app: Express = express();
 
 app.use(express.json());
 app.use(cors({
-    allowedHeaders: ['Content-Type', 'Authorization'],
     origin: ['http://localhost:5173', process.env.CLIENT_URL!],
     credentials: true
 }));
