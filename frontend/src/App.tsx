@@ -15,7 +15,7 @@ import Redirect from "./pages/Redirect";
 import CalculateATS from "./pages/CalculateATS";
 import ProtectedRoute from "./components/ProtectedRoute";
 import SkillAnalysis from "./pages/SkillAnalysis";
-import ResumeAnalysisPage from "./pages/SkillAnalysis";
+import AnalyseResume from "./pages/AnalyseResume";
 import ResumeDetails from "./pages/ResumeAnalysis";
 
 interface ServerResponse {
@@ -60,11 +60,11 @@ const router = createBrowserRouter([
   },
   {
     path: '/analyse-resume',
-    element: <ResumeDetails />
+    element: <AnalyseResume /> 
   },
   {
     path: '/analysis',
-    element: <ResumeAnalysisPage />
+    element: <ResumeDetails />
   },
   {
     path: '/calculate-ats',
