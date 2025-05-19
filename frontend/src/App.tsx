@@ -18,6 +18,7 @@ import SkillAnalysis from "./pages/SkillAnalysis";
 import AnalyseResume from "./pages/AnalyseResume";
 import ResumeDetails from "./pages/ResumeAnalysis";
 import OtpLoginForm from "./components/auth/LoginOtp";
+import AboutUs from "./pages/About";
 
 interface ServerResponse {
   message: string;
@@ -66,6 +67,10 @@ const router = createBrowserRouter([
   {
     path: '/analyse-resume',
     element: <AnalyseResume /> 
+  },
+  {
+    path: '/about-us',
+    element: <AboutUs />
   },
   {
     path: '/analysis',

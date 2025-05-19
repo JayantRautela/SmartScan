@@ -11,7 +11,7 @@ const Footer = () => {
           <Link to="/" className="hover:underline transition delay-150 duration-300 ease-in-out">Home</Link>
           <Link to="/resume-analysis" className="hover:underline transition delay-150 duration-300 ease-in-out">Resume Analysis</Link>
           <Link to="/calculate-ats" className="hover:underline transition delay-150 duration-300 ease-in-out">Calculate ATS</Link>
-          <Link to="/" className="hover:underline transition delay-150 duration-300 ease-in-out">About Us</Link>
+          <Link to="/about-us" className="hover:underline transition delay-150 duration-300 ease-in-out">About Us</Link>
         </div>
       </section>
 
