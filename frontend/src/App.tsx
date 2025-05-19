@@ -78,11 +78,11 @@ function App() {
   useEffect(() => {
     const validateUser = async () => {
       try {
-        await axios.post<ServerResponse>('https://skillscan-backend-production.up.railway.app/api/v1/users/getAccessToken', {}, {
+        await axios.post<ServerResponse>('https://smartscan-production.up.railway.app/api/v1/users/getAccessToken', {}, {
           withCredentials: true
         });
         
-        const res = await axios.get<ServerResponse>('https://skillscan-backend-production.up.railway.app/api/v1/users/user', {
+        const res = await axios.get<ServerResponse>('https://smartscan-production.up.railway.app/api/v1/users/user', {
           withCredentials: true
         });
 
