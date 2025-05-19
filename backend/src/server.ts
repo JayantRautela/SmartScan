@@ -10,7 +10,7 @@ const app: Express = express();
 
 app.use(express.json());
 app.use(cors({
-    origin: ['http://localhost:5173', process.env.CLIENT_URL!],
+    origin: ['http://localhost:5173', process.env.CLIENT_URL!, 'https://smart-scan-eight.vercel.app',],
     credentials: true
 }));
 app.use(cookieParser());
