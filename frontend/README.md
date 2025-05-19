@@ -1,54 +1,71 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# SmartScan Frontend
 
-Currently, two official plugins are available:
+SmartScan is a cutting-edge resume analysis and job-matching platform powered by AI. This repository contains the **frontend** of the application, built with modern web technologies to offer a sleek and intuitive user experience.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+> 📌 [Live Demo ](https://smart-scan-eight.vercel.app)
 
-## Expanding the ESLint configuration
+## 🚀 Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- 📄 View detailed resume insights (skills, summary, improvements)
+- 🧠 Upload and analyze resumes using AI
+- 📊 ATS (Applicant Tracking System) Score calculation
+- 🔍 Match resumes with job descriptions
+- 🌐 Responsive UI for desktop and mobile
+- ⚡ Fast performance with efficient state management
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## 🛠️ Tech Stack
+
+- **Frontend Framework:** React (with Vite)
+- **Language:** TypeScript
+- **State Management:** Redux Toolkit
+- **Routing:** React Router DOM
+- **UI Library:** Tailwind CSS and ShadCN
+- **HTTP Client:** Axios
+
+## 📁 Folder Structure
+
+
+```frontend/
+│
+├── public/                # Static assets
+├── src/
+│   ├── assets/            # Images and static media
+│   ├── components/        # Reusable UI components
+│   ├── pages/             # Route-based pages
+│   ├── redux/             # Redux Toolkit slices and store
+│   ├── utils/             # Utility functions
+│   ├── App.tsx            # Root component
+│   └── main.tsx           # Entry point
+├── index.html             # HTML template
+├── tailwind.config.js     # Tailwind CSS configuration
+├── vite.config.ts         # Vite configuration
+└── package.json
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 📦 Installation
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+1. **Clone the repository:**
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+git clone https://github.com/JayantRautela/SmartScan.git
+cd SmartScan/frontend
 ```
+
+2. **Install dependencies:**
+
+```bash
+npm install
+```
+
+3. **Start the development server:**
+
+```bash
+npm run dev
+```
+
+4. Visit `http://localhost:5173` in your browser.
+
+> ⚠️ Make sure the backend server is running for full functionality.\
+
+### ✨ Made with ❤️ by [Jayant Rautela](https://github.com/JayantRautela)
