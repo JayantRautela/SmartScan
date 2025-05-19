@@ -125,6 +125,10 @@ const RegisterForm = () => {
       });
       } finally {
         setIsLoading(false);
+        setEmail('');
+        setUsername('');
+        setPassword('');
+        setFullName('');
       }
     } else {
       toast.error("Please correct the errors in the form.");
@@ -236,7 +240,7 @@ const RegisterForm = () => {
 
               <Button 
                 type="submit" 
-                className="w-full font-semibold py-3 px-4 rounded-lg text-sm sm:text-base flex items-center justify-center"
+                className="w-full cursor-pointer font-semibold py-3 px-4 rounded-lg text-sm sm:text-base flex items-center justify-center"
                 disabled={isLoading}
               >
                 {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
