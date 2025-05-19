@@ -9,7 +9,7 @@ const Footer = () => {
         <h1 className="tracking-tighter text-lg font-semibold">SmartScan</h1>
         <div className="flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-10 items-center justify-center mt-6 text-gray-700">
           <Link to="/" className="hover:underline transition delay-150 duration-300 ease-in-out">Home</Link>
-          <Link to="/resume-analysis" className="hover:underline transition delay-150 duration-300 ease-in-out">Resume Analysis</Link>
+          <Link to="/analyse-resume" className="hover:underline transition delay-150 duration-300 ease-in-out">Resume Analysis</Link>
           <Link to="/calculate-ats" className="hover:underline transition delay-150 duration-300 ease-in-out">Calculate ATS</Link>
           <Link to="/about-us" className="hover:underline transition delay-150 duration-300 ease-in-out">About Us</Link>
         </div>

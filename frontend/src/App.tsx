@@ -66,7 +66,11 @@ const router = createBrowserRouter([
   },
   {
     path: '/analyse-resume',
-    element: <AnalyseResume /> 
+    element: (
+      <ProtectedRoute>
+        <AnalyseResume /> 
+      </ProtectedRoute>
+    )
   },
   {
     path: '/about-us',
