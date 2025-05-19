@@ -10,8 +10,8 @@ const Footer = () => {
         <div className="flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-10 items-center justify-center mt-6 text-gray-700">
           <Link to="/" className="hover:underline transition delay-150 duration-300 ease-in-out">Home</Link>
           <Link to="/resume-analysis" className="hover:underline transition delay-150 duration-300 ease-in-out">Resume Analysis</Link>
-          <Link to="/learning-path" className="hover:underline transition delay-150 duration-300 ease-in-out">Learning Path</Link>
-          <Link to="/success-stories" className="hover:underline transition delay-150 duration-300 ease-in-out">Success Stories</Link>
+          <Link to="/calculate-ats" className="hover:underline transition delay-150 duration-300 ease-in-out">Calculate ATS</Link>
+          <Link to="/" className="hover:underline transition delay-150 duration-300 ease-in-out">About Us</Link>
         </div>
       </section>
 
