@@ -1,10 +1,11 @@
-import express, { Express } from 'express';
+import express, { Express, Request, Response } from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import cookieParser from 'cookie-parser';
 dotenv.config({});
 import UserRouter from './routes/user.route';
 import ResumeRouter from './routes/resume.route';
+import { rateLimiter } from './middlewares/rateLimiter.middleware';
 
 const app: Express = express();
 
@@ -17,6 +18,13 @@ app.use(cookieParser());
 
 const PORT = process.env.PORT || 5000;
 
+app.get('/', (req: Request, res: Response) => {
+    res.status(200).json({
+        message: "Server running good",
+        success: true 
+    });
+});
+app.use(rateLimiter);
 app.use('/api/v1/users', UserRouter);
 app.use('/api/v1/resume', ResumeRouter);
 
