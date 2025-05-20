@@ -31,6 +31,7 @@ SmartScan is an AI-powered resume analysis and enhancement platform designed to 
 ### 🔒 Authentication System
 - Secure login and registration with **JWT-based authentication**.
 - User dashboard to track uploaded resumes and past analysis.
+- Rate Limited APIs to limit the request to the backend
 
 ### 🌐 Responsive UI
 - Modern and intuitive user interface built with React and Tailwind CSS.
