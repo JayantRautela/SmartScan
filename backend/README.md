@@ -13,6 +13,7 @@ The **SmartScan Backend** is the server-side engine of the SmartScan platform �
 - ☁️ File uploads for resumes
 - 🔄 RESTful APIs to serve the frontend
 - 🧼 Input validation and error handling
+- ⌛️ Rate Limit Api Calls so that server is not overloaded and is secured from DDoS attacks
 
 ## 🛠️ Tech Stack
 
