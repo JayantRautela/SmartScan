@@ -132,9 +132,9 @@ const Navbar = () => {
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.4 }}
           >
-            <Link to="/" onClick={() => setMenuOpen(false)}>Resume Analysis</Link>
-            <Link to="/learning-path" onClick={() => setMenuOpen(false)}>Learning Path</Link>
-            <Link to="/success-stories" onClick={() => setMenuOpen(false)}>Success Stories</Link>
+            <Link to='/calculate-ats' onClick={() => setMenuOpen(false)}>Calculate ATS</Link>
+            <Link to="/analyse-resume" onClick={() => setMenuOpen(false)}>Resume Analysis</Link>
+            <Link to="/about-us" onClick={() => setMenuOpen(false)}>About Us</Link>
 
             {!user ? (
               <div className="space-x-4">
